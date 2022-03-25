@@ -115,7 +115,7 @@ public class TestObject extends TestCase {
         stream.close();
         assertEquals("{\"field1\":null}", baos.toString());
     }
-
+    // TODO: remove unwritten field
     public static class TestObject7 {
         private int[] field1;
 
