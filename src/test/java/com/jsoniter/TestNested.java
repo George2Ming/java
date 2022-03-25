@@ -62,7 +62,7 @@ public class TestNested extends TestCase {
     public static class TestObject3 {
         public com.jsoniter.output.TestNested.TestObject3 reference;
     }
-
+    // TODO: remove dead store to obj
     public void test_recursive_class() {
         // recursive reference will not be supported
         // however recursive structure is supported
