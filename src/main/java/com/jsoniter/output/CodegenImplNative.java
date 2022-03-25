@@ -324,11 +324,11 @@ class CodegenImplNative {
             throw new JsonException("unsupported type: " + fieldType);
         }
     }
-    // TODO: pass less arguments
+    
     public static CodegenResult genEnum(Class clazz) {
         boolean noIndention = JsoniterSpi.getCurrentConfig().indentionStep() == 0;
         CodegenResult ctx = new CodegenResult();
-        ctx.append(String.format("public static void encode_(java.lang.Object obj, com.jsoniter.output.JsonStream stream) throws java.io.IOException {", clazz.getCanonicalName()));
+        ctx.append(String.format("public static void encode_(java.lang.Object obj, com.jsoniter.output.JsonStream stream) throws java.io.IOException"));
         ctx.append("if (obj == null) { stream.writeNull(); return; }");
         if (noIndention) {
             ctx.buffer('"');
