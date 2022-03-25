@@ -44,9 +44,12 @@ public class Slice {
         byte[] data = str.getBytes();
         return new Slice(data, 0, data.length);
     }
-    // FIXME: add check for null argument
+    
     @Override
     public final boolean equals(Object o) {
+    	if (o == null) {
+    		return false;
+    	}
         Slice slice = (Slice) o;
         if ((tail - head) != (slice.tail - slice.head)) return false;
         for (int i = head, j = slice.head; i < tail; i++, j++)
