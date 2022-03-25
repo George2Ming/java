@@ -328,7 +328,7 @@ class IterImpl {
     public static int updateStringCopyBound(final JsonIterator iter, final int bound) {
         return bound;
     }
-    // TODO: remove this self assignment of field
+   
     static final int readInt(final JsonIterator iter, final byte c) throws IOException {
         int ind = IterImplNumber.intDigits[c];
         if (ind == 0) {
@@ -342,7 +342,7 @@ class IterImpl {
             int i = iter.head;
             int ind2 = IterImplNumber.intDigits[iter.buf[i]];
             if (ind2 == IterImplNumber.INVALID_CHAR_FOR_NUMBER) {
-                iter.head = i;
+//                iter.head = i;
                 return -ind;
             }
             int ind3 = IterImplNumber.intDigits[iter.buf[++i]];
