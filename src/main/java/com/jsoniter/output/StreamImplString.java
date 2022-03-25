@@ -142,7 +142,7 @@ class StreamImplString {
             writeStringSlowPathWithoutEscapeUnicode(stream, val, i, valLen);
         }
     }
-
+    // TODO: remove useless condition
     private static void writeStringSlowPathWithoutEscapeUnicode(JsonStream stream, String val, int i, int valLen) throws IOException {
         int _surrogate;
         for (; i < valLen; i++) {
