@@ -124,7 +124,7 @@ public class TestGenerics extends TestCase {
         public String name;
         public int age;
     }
-
+    // TODO: remove read of unwritten results
     public void test_issue_103() {
         String json = "{'code':1, 'desc':'OK', 'results':{'name':'aaa', 'age':18}}".replace('\'', '\"');
         NetRes res = JsonIterator.deserialize(json, new TypeLiteral<NetRes<User>>() {
