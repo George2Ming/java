@@ -44,7 +44,7 @@ public class Slice {
         byte[] data = str.getBytes();
         return new Slice(data, 0, data.length);
     }
-
+    // FIXME: add check for null argument
     @Override
     public final boolean equals(Object o) {
         Slice slice = (Slice) o;
