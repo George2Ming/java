@@ -3,7 +3,7 @@ package com.jsoniter;
 public class SimpleObject {
     public String field2;
     public String field1;
-
+    // TODO: add check for null argument
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
