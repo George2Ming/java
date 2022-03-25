@@ -390,7 +390,7 @@ class IterImpl {
         }
         return IterImplForStreaming.readIntSlowPath(iter, ind);
     }
-    // TODO: remove self assignment of field
+    
     static final long readLong(final JsonIterator iter, final byte c) throws IOException {
         long ind = IterImplNumber.intDigits[c];
         if (ind == IterImplNumber.INVALID_CHAR_FOR_NUMBER) {
@@ -400,7 +400,7 @@ class IterImpl {
             int i = iter.head;
             int ind2 = IterImplNumber.intDigits[iter.buf[i]];
             if (ind2 == IterImplNumber.INVALID_CHAR_FOR_NUMBER) {
-                iter.head = i;
+//                iter.head = i;
                 return -ind;
             }
             int ind3 = IterImplNumber.intDigits[iter.buf[++i]];
