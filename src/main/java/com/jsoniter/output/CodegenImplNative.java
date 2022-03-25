@@ -324,6 +324,7 @@ class CodegenImplNative {
             throw new JsonException("unsupported type: " + fieldType);
         }
     }
+    // TODO: pass less arguments
     public static CodegenResult genEnum(Class clazz) {
         boolean noIndention = JsoniterSpi.getCurrentConfig().indentionStep() == 0;
         CodegenResult ctx = new CodegenResult();
