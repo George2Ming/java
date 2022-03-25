@@ -180,7 +180,7 @@ public class TestDemo extends TestCase {
         public String owner;
         public String name;
     }
-
+    // TODO: remove read of unwritten results
     public void test_generics() {
         CollectionResponse<Feed> objs = JsonIterator.deserialize("{\n" +
                 "\"count\": 1,\n" +
