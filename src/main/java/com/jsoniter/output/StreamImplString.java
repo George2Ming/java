@@ -142,7 +142,7 @@ class StreamImplString {
             writeStringSlowPathWithoutEscapeUnicode(stream, val, i, valLen);
         }
     }
-    // TODO: remove useless condition
+    
     private static void writeStringSlowPathWithoutEscapeUnicode(JsonStream stream, String val, int i, int valLen) throws IOException {
         int _surrogate;
         for (; i < valLen; i++) {
@@ -175,7 +175,7 @@ class StreamImplString {
                     int firstPart = _surrogate;
                     _surrogate = 0;
                     // Ok, then, is the second part valid?
-                    if (c < SURR2_FIRST || c > SURR2_LAST) {
+                    if (c < SURR2_FIRST) {
                         throw new JsonException("Broken surrogate pair: first char 0x" + Integer.toHexString(firstPart) + ", second 0x" + Integer.toHexString(c) + "; illegal combination");
                     }
                     c = 0x10000 + ((firstPart - SURR1_FIRST) << 10) + (c - SURR2_FIRST);
